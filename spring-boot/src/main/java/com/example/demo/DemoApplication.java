@@ -20,22 +20,10 @@ import java.util.Collections;
 
 
 @SpringBootApplication
-@RestController
 public class DemoApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(DemoApplication.class, args);
-	}
-
-	@GetMapping("/hello")
-	public String hello() {
-		RestTemplate restTemplate = new RestTemplate();
-
-		String URI = "http://localhost:8082/health-check";
-
-		ResponseEntity<?> result = restTemplate.getForEntity(URI, Response.class);
-
-		return String.format(result.getBody().toString());
 	}
 
 }
