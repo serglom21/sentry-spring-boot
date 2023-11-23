@@ -15,11 +15,11 @@ public class ApiController {
         this.restTemplate = restTemplate;
     }
 
-    @GetMapping("/hello")
-    public String hello() {
+    @GetMapping("/")
+    public String home() {
 //		RestTemplate restTemplate = new RestTemplate();
 
-        String URI = "http://localhost:8082/health-check";
+        String URI = "http://localhost:8082/fetch-blog";
 
         ResponseEntity<?> result = restTemplate.getForEntity(URI, Response.class);
 
